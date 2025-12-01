@@ -1,0 +1,4 @@
+# testing phase configuration
+
+server:
+  port: 9094
