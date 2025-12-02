@@ -1,6 +1,6 @@
 package com.auth.pattern;
 
-import java.util.Scanner;
+import java.util.*;
 
 /*
        Enter the Kth rotation : 3
