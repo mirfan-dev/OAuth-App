@@ -3,7 +3,7 @@
 # ===============================
 
 server:
-  port: 9092
+  port: 9096
 
 
 spring:
@@ -80,5 +80,9 @@ app:
       failure-redirect: http://localhost:5173/auth/failure
 
 # OAuth login URL:
-# http://localhost:9092/oauth2/authorization/google
-# http://localhost:9092/oauth2/authorization/github
+  # http://localhost:9092/oauth2/authorization/google
+  # http://localhost:9092/oauth2/authorization/github
+
+
+# OpenAPI documentation url
+  # http://localhost:9096/swagger-ui/index.html

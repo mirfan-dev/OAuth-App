@@ -1,7 +1,10 @@
 package com.auth.pattern;
 
 import java.util.Scanner;
-
+/*
+                    input : My name 934u938; kldfjd @#$ ram
+                    output: ram  kldfjd u name My
+ */
 public class ReverseWord {
 
     public static void main(String[] args) {
@@ -11,12 +14,17 @@ public class ReverseWord {
     }
 
     public static String reverse(String s) {
-        String[] words = s.split(" ");
-            String rev = "";
-            for (int i = words.length - 1; i >= 0; i--) {
-                rev = rev + words[i]+ " ";
-            }
 
-        return rev;
+        // Remove all numbers and special characters, keep only letters and spaces
+        s = s.replaceAll("[^A-Za-z ]", "");
+
+        String[] words = s.trim().split(" ");
+
+        String rev = "";
+        for (int i = words.length - 1; i >= 0; i--) {
+            rev = rev + words[i] + " ";
+        }
+
+        return rev.trim();
     }
 }

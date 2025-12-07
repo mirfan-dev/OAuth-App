@@ -2,6 +2,7 @@ package com.auth.config;
 
 
 
+import com.auth.helper.AppConstant;
 import com.auth.security.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -32,13 +33,7 @@ public class SecurityConfig {
 
 
 
-    private static final String[] PUBLIC_PATHS = {
 
-            "/api/v1/auth/register",
-            "/api/v1/auth/login",
-            "/api/v1/auth/refresh-token",
-            "/api/v1/auth/logout"
-    };
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -46,7 +41,7 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .cors(Customizer.withDefaults())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(PUBLIC_PATHS).permitAll()
+                        .requestMatchers(AppConstant.PUBLIC_URLS).permitAll()
                         .anyRequest().authenticated()
                 )
 
