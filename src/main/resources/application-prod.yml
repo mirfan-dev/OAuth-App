@@ -1,0 +1,4 @@
+# production phase configuration
+
+server:
+  port: 9093
